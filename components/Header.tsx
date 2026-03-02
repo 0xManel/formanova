@@ -41,26 +41,23 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+
+        {/* Main row: logo left — nav center — cta right */}
+        <div className="flex items-center justify-between h-14 lg:h-16">
 
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNavClick("#inicio")}>
-            <div className="relative w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-sm p-0.5 shadow-sm">
+            <div className="relative w-9 h-9 lg:w-11 lg:h-11 bg-white rounded-sm p-0.5 shadow-sm">
               <Image src="/logo.png" alt="FormaNova logo" fill className="object-contain" priority />
             </div>
             <div className="flex flex-col">
-              <span className="text-base lg:text-lg font-bold tracking-widest uppercase leading-none">
+              <span className="text-sm lg:text-base font-bold tracking-widest uppercase leading-none">
                 <span className="text-gray-700">FORMA</span>
                 <span className="text-brand-gold">NOVA</span>
               </span>
-              <span className="text-[10px] text-gray-500 tracking-widest uppercase">
+              <span className="text-[9px] text-gray-500 tracking-widest uppercase">
                 OBRAS & REFORMAS
               </span>
             </div>
-          </div>
-
-          {/* Lang toggle — center of header */}
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <LangToggle />
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -114,6 +111,12 @@ export default function Header() {
             </button>
           </div>
         </div>
+
+        {/* Lang toggle row — centered below main nav */}
+        <div className="flex justify-center pb-2">
+          <LangToggle />
+        </div>
+
       </div>
 
       {/* Mobile Menu — slides down smoothly */}
