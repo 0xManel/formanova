@@ -1,3 +1,5 @@
+"use client";
+
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
@@ -66,7 +68,7 @@ export default function Testimonials() {
 
               {/* Text */}
               <p className="text-gray-400 text-sm leading-relaxed mt-4 mb-6 italic">
-                "{t.text}"
+                &ldquo;{t.text}&rdquo;
               </p>
 
               {/* Bottom */}

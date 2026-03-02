@@ -1,3 +1,5 @@
+"use client";
+
 import { Shield, Clock, Star, Handshake } from "lucide-react";
 
 const features = [

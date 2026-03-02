@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 
