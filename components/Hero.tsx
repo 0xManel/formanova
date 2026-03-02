@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
         {/* Logo centrado */}
         <div className="flex justify-center mb-8">
-          <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 drop-shadow-2xl">
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[448px] lg:h-[448px] drop-shadow-2xl">
             <Image
               src="/logo.png"
               alt="FormaNova logo"

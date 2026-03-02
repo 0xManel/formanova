@@ -39,7 +39,7 @@ export default function Footer() {
                   <span className="text-brand-gold">NOVA</span>
                 </p>
                 <p className="text-[10px] text-gray-600 tracking-widest uppercase mt-0.5">
-                  Reformas & Obras
+                  REFORMAS & OBRAS
                 </p>
               </div>
             </div>
