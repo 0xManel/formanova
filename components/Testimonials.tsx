@@ -1,12 +1,8 @@
 "use client";
 
 import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  { name: "María G.",  location: "A Coruña", text: "Reformaron nuestro baño completo en tiempo récord. El resultado es espectacular y el precio fue muy ajustado. Muy recomendables.", service: "Reforma de baño",    rating: 5 },
-  { name: "Carlos M.", location: "A Coruña", text: "Contratamos a FormaNova para una reforma integral del piso. Trabajo limpio, puntual y de gran calidad. Repetiremos sin duda.",  service: "Reforma integral", rating: 5 },
-  { name: "Ana R.",    location: "Arteixo",  text: "Muy profesionales desde el primer momento. El presupuesto fue claro y detallado, sin sorpresas al final. La cocina quedó perfecta.", service: "Reforma de cocina", rating: 5 },
-];
+import { useLang } from "./LangProvider";
+import { t } from "@/lib/translations";
 
 function Stars({ count }: { count: number }) {
   return (
@@ -19,32 +15,34 @@ function Stars({ count }: { count: number }) {
 }
 
 export default function Testimonials() {
+  const { lang } = useLang();
+  const tr = t[lang];
+
   return (
     <section className="bg-gray-100 py-20 lg:py-28 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Opiniones</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
+          <p className="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">{tr.testiLabel}</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">{tr.testiTitle}</h2>
           <div className="gold-divider mx-auto" />
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
+          {tr.testimonials.map((tst, i) => (
             <div key={i} className="group bg-white border border-gray-200 hover:border-brand-gold/30 rounded-sm p-7 transition-all duration-300 relative">
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Quote size={44} className="text-brand-gold" />
               </div>
-              <Stars count={t.rating} />
+              <Stars count={5} />
               <p className="text-gray-600 text-lg leading-relaxed mt-4 mb-6 italic">
-                &ldquo;{t.text}&rdquo;
+                &ldquo;{tst.text}&rdquo;
               </p>
               <div className="border-t border-gray-100 pt-5 flex items-center justify-between">
                 <div>
-                  <p className="text-gray-900 font-semibold text-base">{t.name}</p>
-                  <p className="text-gray-500 text-sm mt-0.5">{t.location}</p>
+                  <p className="text-gray-900 font-semibold text-base">{tst.name}</p>
+                  <p className="text-gray-500 text-sm mt-0.5">{tst.location}</p>
                 </div>
                 <span className="text-brand-gold text-sm font-medium border border-brand-gold/20 bg-brand-gold/5 px-3 py-1 rounded-full">
-                  {t.service}
+                  {tst.service}
                 </span>
               </div>
             </div>

@@ -1,7 +1,12 @@
 {
   "permissions": {
     "additionalDirectories": [
-      "/Users/0xmanel/novareforma"
+      "/Users/0xmanel/novareforma",
+      "/Users/0xmanel/novareforma/components",
+      "/Users/0xmanel/novareforma/lib"
+    ],
+    "allow": [
+      "Bash(__NEW_LINE_58db2878884f056b__ cat)"
     ]
   }
 }

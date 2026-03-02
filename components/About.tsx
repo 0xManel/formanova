@@ -1,43 +1,33 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
-
-const values = [
-  "Atención personalizada desde el primer contacto",
-  "Materiales de calidad contrastada",
-  "Equipo propio — sin subcontratas",
-  "Presupuesto detallado y transparente",
-  "Limpieza y orden durante la obra",
-  "Garantía en todos nuestros trabajos",
-];
+import { useLang } from "./LangProvider";
+import { t } from "@/lib/translations";
 
 export default function About() {
+  const { lang } = useLang();
+  const tr = t[lang];
+
   return (
     <section id="nosotros" className="bg-gray-50 py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           <div>
-            <p className="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Sobre nosotros</p>
+            <p className="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">{tr.aboutLabel}</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Una empresa de reformas<br />
-              <span className="text-brand-gold">en la que confiar</span>
+              {tr.aboutTitle1}<br />
+              <span className="text-brand-gold">{tr.aboutTitle2}</span>
             </h2>
             <div className="gold-divider mb-8" />
-
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
-                En <strong className="text-gray-900 font-semibold">FormaNova</strong> nos dedicamos a reformas y trabajos de albañilería, ofreciendo soluciones personalizadas para cada cliente. Trabajamos con seriedad, experiencia y vocación de servicio.
+                En <strong className="text-gray-900 font-semibold">FormaNova</strong> {tr.aboutBody1.replace("En FormaNova ", "")}
               </p>
-              <p>
-                Nuestra forma de trabajar se basa en la comunicación constante con el cliente, el respeto a los presupuestos acordados y la entrega puntual. No prometemos lo que no podemos cumplir.
-              </p>
-              <p>
-                Operamos en <strong className="text-gray-900 font-semibold">A Coruña y toda su área metropolitana</strong>, con un equipo propio de profesionales especializados.
-              </p>
+              <p>{tr.aboutBody2}</p>
+              <p>{tr.aboutBody3}</p>
             </div>
-
             <ul className="mt-8 space-y-3">
-              {values.map((v, i) => (
+              {tr.aboutValues.map((v, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="text-brand-gold mt-0.5 flex-shrink-0" size={18} />
                   <span className="text-gray-600 text-base">{v}</span>
@@ -57,14 +47,14 @@ export default function About() {
                   <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
                 </svg>
               </div>
-              <p className="text-gray-500 text-base">Foto del equipo</p>
-              <p className="text-gray-400 text-sm mt-1">Próximamente</p>
+              <p className="text-gray-500 text-base">{tr.aboutPhotoLabel}</p>
+              <p className="text-gray-400 text-sm mt-1">{tr.aboutPhotoSoon}</p>
               <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
                 <div className="absolute -top-8 -right-8 w-16 h-16 bg-brand-gold/20 rotate-45" />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-4">
-              {[{ value: "10+", label: "Años de experiencia" }, { value: "A Coruña", label: "Zona de trabajo" }].map((stat) => (
+              {[{ value: "10+", label: tr.statYears }, { value: "A Coruña", label: tr.aboutStatZone }].map((stat) => (
                 <div key={stat.label} className="bg-white border border-gray-200 p-5 rounded-sm text-center">
                   <p className="text-2xl font-bold text-brand-gold">{stat.value}</p>
                   <p className="text-gray-500 text-sm mt-1 tracking-wide">{stat.label}</p>

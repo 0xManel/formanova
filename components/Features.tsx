@@ -1,15 +1,20 @@
 "use client";
 
 import { Shield, Clock, Star, Handshake } from "lucide-react";
-
-const features = [
-  { icon: Shield,    title: "Calidad garantizada",      desc: "Materiales de primera y acabados impecables en cada proyecto." },
-  { icon: Clock,     title: "Cumplimos los plazos",     desc: "Nos comprometemos con las fechas y las respetamos." },
-  { icon: Star,      title: "Experiencia comprobada",   desc: "Más de 10 años realizando reformas en A Coruña y alrededores." },
-  { icon: Handshake, title: "Presupuesto sin compromiso", desc: "Te asesoramos y presupuestamos sin coste ni obligación." },
-];
+import { useLang } from "./LangProvider";
+import { t } from "@/lib/translations";
 
 export default function Features() {
+  const { lang } = useLang();
+  const tr = t[lang];
+
+  const features = [
+    { icon: Shield,    title: tr.featureTitle1, desc: tr.featureDesc1 },
+    { icon: Clock,     title: tr.featureTitle2, desc: tr.featureDesc2 },
+    { icon: Star,      title: tr.featureTitle3, desc: tr.featureDesc3 },
+    { icon: Handshake, title: tr.featureTitle4, desc: tr.featureDesc4 },
+  ];
+
   return (
     <section className="bg-gray-100 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">

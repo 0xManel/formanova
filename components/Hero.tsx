@@ -3,8 +3,13 @@
 import Image from "next/image";
 import { Phone, MessageCircle, FileText, ChevronDown } from "lucide-react";
 import TypeWriter from "./TypeWriter";
+import LangToggle from "./LangToggle";
+import { useLang } from "./LangProvider";
+import { t } from "@/lib/translations";
 
 export default function Hero() {
+  const { lang } = useLang();
+  const tr = t[lang];
   const phone = "+34 642 82 71 96";
   const whatsappUrl = `https://wa.me/34642827196?text=${encodeURIComponent("Hola, me gustaría solicitar un presupuesto sin compromiso.")}`;
 
@@ -22,11 +27,13 @@ export default function Hero() {
           backgroundSize: "60px 60px",
         }}
       />
-      {/* Gold radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(201,168,76,0.07),transparent)]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+
+        {/* Lang Toggle — above the logo */}
+        <LangToggle />
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
@@ -36,28 +43,28 @@ export default function Hero() {
         </div>
 
         {/* TypeWriter */}
-        <TypeWriter />
+        <TypeWriter lang={lang} />
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-sm font-medium tracking-widest uppercase px-4 py-2 rounded-full mb-8 mt-4">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
-          A Coruña y alrededores
+          {tr.heroBadge}
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900">
-          Reformas y Obras
+          {tr.heroH1a}
           <br />
-          <span className="text-brand-gold">de calidad</span>
+          <span className="text-brand-gold">{tr.heroH1b}</span>
           <br />
-          <span className="text-gray-500 font-light mt-3 block">en A Coruña</span>
+          <span className="text-gray-500 font-light mt-3 block">{tr.heroH1c}</span>
         </h1>
 
         {/* Subtext */}
         <p className="text-xl sm:text-2xl text-gray-600 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          Seriedad, compromiso y resultados profesionales.
+          {tr.heroSub1}
           <br className="hidden sm:block" />
-          Desde reformas integrales hasta pequeñas reparaciones.
+          {tr.heroSub2}
         </p>
 
         {/* CTA Buttons */}
@@ -67,7 +74,7 @@ export default function Hero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-black font-semibold px-8 py-4 rounded-sm transition-all duration-200 text-lg tracking-wide shadow-lg shadow-brand-gold/20 hover:shadow-brand-gold/40 hover:-translate-y-0.5"
           >
             <FileText size={20} />
-            Solicitar Presupuesto
+            {tr.heroCta1}
           </button>
 
           <a
@@ -77,7 +84,7 @@ export default function Hero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20BD5C] text-white font-semibold px-8 py-4 rounded-sm transition-all duration-200 text-lg tracking-wide hover:-translate-y-0.5"
           >
             <MessageCircle size={20} />
-            WhatsApp
+            {tr.heroCta2}
           </a>
 
           <a
@@ -85,16 +92,16 @@ export default function Hero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-400 hover:border-brand-gold text-gray-700 hover:text-brand-gold font-medium px-8 py-4 rounded-sm transition-all duration-200 text-lg hover:-translate-y-0.5"
           >
             <Phone size={20} />
-            Llamar ahora
+            {tr.heroCta3}
           </a>
         </div>
 
         {/* Stats */}
         <div className="mt-16 pt-10 border-t border-gray-200 grid grid-cols-3 gap-6 max-w-lg mx-auto">
           {[
-            { value: "10+", label: "Años de experiencia" },
-            { value: "200+", label: "Proyectos realizados" },
-            { value: "100%", label: "Satisfacción garantizada" },
+            { value: "10+", label: tr.statYears },
+            { value: "200+", label: tr.statProjects },
+            { value: "100%", label: tr.statSat },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-brand-gold">{stat.value}</p>

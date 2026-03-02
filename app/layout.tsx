@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import LangProvider from "@/components/LangProvider";
 
 export const metadata: Metadata = {
   title: "FormaNova | Empresa de Reformas en A Coruña",
   description:
-    "Reformas integrales, baños, cocinas y albañilería en A Coruña. Seriedad, compromiso y resultados profesionales. Presupuesto sin compromiso. ☎ +34 642 82 71 96",
+    "Reformas integrais, baños, cociñas e albanelería en A Coruña. Seriedade, compromiso e resultados profesionais. Orzamento sen compromiso. ☎ +34 642 82 71 96",
   keywords: [
     "reformas en A Coruña",
     "empresa de reformas A Coruña",
@@ -34,8 +35,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
-      <body className="bg-white dark:bg-brand-dark1 text-gray-900 dark:text-white antialiased transition-colors duration-300">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="bg-white text-gray-900 antialiased">
+        <ThemeProvider>
+          <LangProvider>{children}</LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
