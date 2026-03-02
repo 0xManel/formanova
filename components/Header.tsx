@@ -53,7 +53,7 @@ export default function Header() {
                 <span className="text-brand-gold">NOVA</span>
               </span>
               <span className="text-[10px] text-gray-500 tracking-widest uppercase">
-                REFORMAS & OBRAS
+                OBRAS & REFORMAS
               </span>
             </div>
           </div>
