@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Phone, MessageCircle, FileText, ChevronDown } from "lucide-react";
 import TypeWriter from "./TypeWriter";
-import LangToggle from "./LangToggle";
 import { useLang } from "./LangProvider";
 import { t } from "@/lib/translations";
 
@@ -31,9 +30,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
-
-        {/* Lang Toggle — above the logo */}
-        <LangToggle />
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
