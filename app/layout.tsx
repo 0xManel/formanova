@@ -33,7 +33,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className="scroll-smooth dark" suppressHydrationWarning>
+    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <body className="bg-white dark:bg-brand-dark1 text-gray-900 dark:text-white antialiased transition-colors duration-300">
         <ThemeProvider>{children}</ThemeProvider>
       </body>

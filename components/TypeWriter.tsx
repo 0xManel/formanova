@@ -51,14 +51,13 @@ export default function TypeWriter() {
   }, [phase, displayed, current.text]);
 
   return (
-    <div className="flex items-center justify-center gap-2 text-2xl sm:text-3xl lg:text-4xl font-semibold mt-3 mb-2 min-h-[1.4em]">
-      <span className="text-gray-800 dark:text-gray-200 font-light">Reforma</span>
+    <div className="w-full px-4 flex items-center justify-center gap-3 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold mt-3 mb-2 min-h-[1.4em]">
+      <span className="text-gray-800 dark:text-gray-200 font-light shrink-0">Reforma</span>
       <span
         style={{
           color: current.color,
-          textShadow: `0 0 18px ${current.glow}, 0 0 6px ${current.glow}`,
+          textShadow: `0 0 24px ${current.glow}, 0 0 8px ${current.glow}`,
           transition: "color 0.3s ease, text-shadow 0.3s ease",
-          minWidth: "8ch",
           display: "inline-block",
         }}
       >

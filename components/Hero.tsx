@@ -46,11 +46,11 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900 dark:text-white">
-          Reformas y obras
+          Reformas y Obras
           <br />
           <span className="text-brand-gold">de calidad</span>
           <br />
-          <span className="text-gray-500 dark:text-gray-300 font-light">en A Coruña</span>
+          <span className="text-gray-500 dark:text-gray-300 font-light mt-3 block">en A Coruña</span>
         </h1>
 
         {/* Subtext */}
