@@ -37,7 +37,7 @@ export default function Hero() {
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="relative w-[480px] h-[480px] sm:w-[576px] sm:h-[576px] lg:w-[672px] lg:h-[672px] drop-shadow-2xl">
+          <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[520px] lg:h-[520px] drop-shadow-2xl">
             <Image src="/logo.png" alt="FormaNova logo" fill className="object-contain" priority />
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900">
           {tr.heroH1a}
           <br />
           <span className="text-brand-gold">{tr.heroH1b}</span>
@@ -61,7 +61,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtext */}
-        <p className="text-xl sm:text-2xl text-gray-600 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-base sm:text-xl text-gray-600 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
           {tr.heroSub1}
           <br className="hidden sm:block" />
           {tr.heroSub2}

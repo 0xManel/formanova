@@ -76,7 +76,7 @@ export default function TypeWriter({ lang }: { lang: "es" | "gl" }) {
   return (
     <div className="w-full px-4 flex justify-center mt-3 mb-2" style={{ minHeight: "1.2em" }}>
       <span
-        className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl"
+        className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl"
         style={{ lineHeight: 1.15, display: "inline-flex", alignItems: "baseline", gap: "0.25em" }}
       >
         <span className="font-light text-gray-800">Reforma</span>
