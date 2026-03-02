@@ -11,11 +11,11 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50 dark:bg-brand-dark1"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50"
     >
       {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.04] dark:opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(201,168,76,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.6) 1px, transparent 1px)",
@@ -45,16 +45,16 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900 dark:text-white">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-5 text-gray-900">
           Reformas y Obras
           <br />
           <span className="text-brand-gold">de calidad</span>
           <br />
-          <span className="text-gray-500 dark:text-gray-300 font-light mt-3 block">en A Coruña</span>
+          <span className="text-gray-500 font-light mt-3 block">en A Coruña</span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-xl sm:text-2xl text-gray-600 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
           Seriedad, compromiso y resultados profesionales.
           <br className="hidden sm:block" />
           Desde reformas integrales hasta pequeñas reparaciones.
@@ -82,7 +82,7 @@ export default function Hero() {
 
           <a
             href={`tel:${phone}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-400 dark:border-gray-600 hover:border-brand-gold text-gray-700 dark:text-gray-300 hover:text-brand-gold font-medium px-8 py-4 rounded-sm transition-all duration-200 text-lg hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-400 hover:border-brand-gold text-gray-700 hover:text-brand-gold font-medium px-8 py-4 rounded-sm transition-all duration-200 text-lg hover:-translate-y-0.5"
           >
             <Phone size={20} />
             Llamar ahora
@@ -90,7 +90,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 pt-10 border-t border-gray-200 dark:border-brand-dark3 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+        <div className="mt-16 pt-10 border-t border-gray-200 grid grid-cols-3 gap-6 max-w-lg mx-auto">
           {[
             { value: "10+", label: "Años de experiencia" },
             { value: "200+", label: "Proyectos realizados" },
@@ -98,7 +98,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl sm:text-4xl font-bold text-brand-gold">{stat.value}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-500 mt-1 leading-tight">{stat.label}</p>
+              <p className="text-sm text-gray-500 mt-1 leading-tight">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -107,7 +107,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => document.querySelector("#servicios")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 dark:text-gray-600 hover:text-brand-gold transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-brand-gold transition-colors animate-bounce"
         aria-label="Scroll down"
       >
         <ChevronDown size={30} />

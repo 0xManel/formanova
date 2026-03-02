@@ -11,7 +11,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="bg-gray-100 dark:bg-brand-dark2 border-y border-gray-200 dark:border-brand-dark3">
+    <section className="bg-gray-100 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {features.map((f, i) => (
@@ -20,8 +20,8 @@ export default function Features() {
                 <f.icon className="text-brand-gold" size={22} />
               </div>
               <div>
-                <h3 className="text-gray-900 dark:text-white font-semibold text-base tracking-wide mb-1">{f.title}</h3>
-                <p className="text-gray-600 dark:text-gray-500 text-base leading-relaxed">{f.desc}</p>
+                <h3 className="text-gray-900 font-semibold text-base tracking-wide mb-1">{f.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed">{f.desc}</p>
               </div>
             </div>
           ))}

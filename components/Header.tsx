@@ -2,13 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
-  // { label: "Trabajos", href: "#trabajos" }, // se activa con la galería
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -16,7 +14,6 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -34,7 +31,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 dark:bg-brand-dark1/95 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-brand-dark3"
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -48,10 +45,10 @@ export default function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-base lg:text-lg font-bold tracking-widest uppercase leading-none">
-                <span className="text-gray-700 dark:text-gray-300">FORMA</span>
+                <span className="text-gray-700">FORMA</span>
                 <span className="text-brand-gold">NOVA</span>
               </span>
-              <span className="text-[10px] text-gray-500 dark:text-gray-500 tracking-widest uppercase">
+              <span className="text-[10px] text-gray-500 tracking-widest uppercase">
                 REFORMAS & OBRAS
               </span>
             </div>
@@ -63,24 +60,15 @@ export default function Header() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-white transition-colors duration-200 tracking-wide"
+                className="text-sm font-medium text-gray-600 hover:text-brand-gold transition-colors duration-200 tracking-wide"
               >
                 {link.label}
               </button>
             ))}
           </nav>
 
-          {/* Right side: theme toggle + CTA + hamburger */}
+          {/* Right side: CTA + hamburger */}
           <div className="flex items-center gap-3">
-            {/* Theme toggle */}
-            <button
-              onClick={toggle}
-              aria-label="Cambiar tema"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 dark:border-brand-dark3 bg-gray-100 dark:bg-brand-dark2 text-gray-600 dark:text-gray-300 hover:border-brand-gold hover:text-brand-gold transition-all duration-200"
-            >
-              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
-
             <a
               href="#contacto"
               onClick={(e) => { e.preventDefault(); handleNavClick("#contacto"); }}
@@ -90,7 +78,7 @@ export default function Header() {
             </a>
 
             <button
-              className="lg:hidden text-gray-700 dark:text-gray-300 hover:text-brand-gold p-2"
+              className="lg:hidden text-gray-700 hover:text-brand-gold p-2"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Abrir menú"
             >
@@ -102,12 +90,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div className={`lg:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="bg-white/98 dark:bg-brand-dark1/98 backdrop-blur-md border-t border-gray-200 dark:border-brand-dark3 px-4 py-6 flex flex-col gap-4">
+        <div className="bg-white/98 backdrop-blur-md border-t border-gray-200 px-4 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="text-left text-gray-700 dark:text-gray-300 hover:text-brand-gold font-medium text-lg py-2 border-b border-gray-100 dark:border-brand-dark3/50 transition-colors"
+              className="text-left text-gray-700 hover:text-brand-gold font-medium text-lg py-2 border-b border-gray-100 transition-colors"
             >
               {link.label}
             </button>
