@@ -40,12 +40,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNavClick("#inicio")}>
-            <div className="relative w-10 h-10 lg:w-12 lg:h-12">
+            <div className="relative w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-sm p-0.5">
               <Image
-                src="/logo.jpeg"
+                src="/logo.png"
                 alt="FormaNova logo"
                 fill
-                className="object-contain rounded-sm"
+                className="object-contain"
                 priority
               />
             </div>

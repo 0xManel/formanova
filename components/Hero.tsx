@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Phone, MessageCircle, FileText, ChevronDown } from "lucide-react";
 
 export default function Hero() {
@@ -30,6 +31,19 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+        {/* Logo centrado */}
+        <div className="flex justify-center mb-8">
+          <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 drop-shadow-2xl">
+            <Image
+              src="/logo.png"
+              alt="FormaNova logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-xs font-medium tracking-widest uppercase px-4 py-2 rounded-full mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />

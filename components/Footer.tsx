@@ -30,8 +30,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-10 h-10">
-                <Image src="/logo.jpeg" alt="FormaNova" fill className="object-contain" />
+              <div className="relative w-10 h-10 bg-white rounded-sm p-0.5">
+                <Image src="/logo.png" alt="FormaNova" fill className="object-contain" />
               </div>
               <div>
                 <p className="font-bold tracking-widest uppercase text-sm leading-none">
