@@ -7,11 +7,11 @@ export default function LangToggle() {
   const isGl = lang === "gl";
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <div>
       <button
         onClick={toggle}
         aria-label="Cambiar idioma"
-        className="relative flex items-stretch rounded-full border border-brand-gold/40 bg-white/90 backdrop-blur-sm shadow-md overflow-hidden transition-all duration-300 hover:border-brand-gold hover:shadow-lg hover:shadow-brand-gold/10"
+        className="relative flex items-stretch rounded-full border border-brand-gold/40 bg-white/90 backdrop-blur-sm shadow-sm overflow-hidden transition-all duration-300 hover:border-brand-gold hover:shadow-md hover:shadow-brand-gold/10"
       >
         <span
           className="relative px-5 py-2 text-xs font-bold tracking-[0.18em] uppercase transition-all duration-300 flex items-center gap-2"

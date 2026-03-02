@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useLang } from "./LangProvider";
 import { t } from "@/lib/translations";
+import LangToggle from "./LangToggle";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +56,11 @@ export default function Header() {
                 REFORMAS & OBRAS
               </span>
             </div>
+          </div>
+
+          {/* Lang toggle — center of header */}
+          <div className="absolute left-1/2 -translate-x-1/2">
+            <LangToggle />
           </div>
 
           <nav className="hidden lg:flex items-center gap-8">
