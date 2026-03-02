@@ -79,23 +79,58 @@ export default function Header() {
             </a>
 
             <button
-              className="lg:hidden text-gray-700 hover:text-brand-gold p-2"
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-sm border border-gray-200 bg-white text-gray-700 hover:text-brand-gold hover:border-brand-gold/40 transition-all duration-200"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Abrir menú"
             >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              <span
+                style={{
+                  display: "block",
+                  transition: "transform 0.25s ease, opacity 0.2s ease",
+                  position: "absolute",
+                  opacity: menuOpen ? 0 : 1,
+                  transform: menuOpen ? "rotate(90deg) scale(0.5)" : "rotate(0deg) scale(1)",
+                }}
+              >
+                <Menu size={20} />
+              </span>
+              <span
+                style={{
+                  display: "block",
+                  transition: "transform 0.25s ease, opacity 0.2s ease",
+                  position: "absolute",
+                  opacity: menuOpen ? 1 : 0,
+                  transform: menuOpen ? "rotate(0deg) scale(1)" : "rotate(-90deg) scale(0.5)",
+                }}
+              >
+                <X size={20} />
+              </span>
             </button>
           </div>
         </div>
       </div>
 
-      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="bg-white/98 backdrop-blur-md border-t border-gray-200 px-4 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
+      {/* Mobile Menu — slides down smoothly */}
+      <div
+        className="lg:hidden absolute left-0 right-0"
+        style={{
+          top: "100%",
+          transition: "opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+          opacity: menuOpen ? 1 : 0,
+          transform: menuOpen ? "translateY(0)" : "translateY(-10px)",
+          pointerEvents: menuOpen ? "auto" : "none",
+          zIndex: 50,
+        }}
+      >
+        <div className="bg-white border-b border-gray-200 shadow-2xl px-6 py-5 flex flex-col gap-1">
+          {navLinks.map((link, i) => (
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="text-left text-gray-700 hover:text-brand-gold font-medium text-lg py-2 border-b border-gray-100 transition-colors"
+              className="text-left text-gray-700 hover:text-brand-gold font-medium text-lg py-3.5 transition-colors duration-150 tracking-wide"
+              style={{
+                borderBottom: i < navLinks.length - 1 ? "1px solid #f3f4f6" : "none",
+              }}
             >
               {link.label}
             </button>
@@ -103,7 +138,7 @@ export default function Header() {
           <a
             href="#contacto"
             onClick={(e) => { e.preventDefault(); handleNavClick("#contacto"); }}
-            className="mt-2 inline-flex items-center justify-center bg-brand-gold hover:bg-brand-gold-light text-black font-semibold px-6 py-3 rounded-sm transition-colors text-base tracking-wide"
+            className="mt-3 inline-flex items-center justify-center bg-brand-gold hover:bg-brand-gold-light text-black font-semibold px-6 py-3.5 rounded-sm transition-colors text-base tracking-wide"
           >
             {tr.navCta}
           </a>
