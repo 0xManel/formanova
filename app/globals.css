@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #111111;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E0C068;
+}
+
+/* Gold divider utility */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #C9A84C, #E0C068);
+  border-radius: 2px;
+}
+
+/* WhatsApp float button pulse ring */
+@keyframes whatsapp-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.whatsapp-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: whatsapp-ring 2s ease-out infinite;
+}
+
+/* Section transition */
+.section-transition {
+  transition: all 0.3s ease;
+}
+
+/* Image overlay on hover */
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-card img,
+.gallery-card .placeholder-img {
+  transition: transform 0.5s ease;
+}
+.gallery-card:hover img,
+.gallery-card:hover .placeholder-img {
+  transform: scale(1.05);
+}
