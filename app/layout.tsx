@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "FormaNova | Empresa de Reformas en A Coruña",
@@ -25,20 +26,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className="bg-brand-dark1 text-white antialiased">{children}</body>
+    <html lang="es" className="scroll-smooth dark" suppressHydrationWarning>
+      <body className="bg-white dark:bg-brand-dark1 text-gray-900 dark:text-white antialiased transition-colors duration-300">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
