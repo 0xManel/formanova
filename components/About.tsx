@@ -36,31 +36,13 @@ export default function About() {
             </ul>
           </div>
 
-          <div className="relative">
-            <div className="relative bg-gray-200 border border-gray-300 rounded-sm aspect-[4/3] flex flex-col items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.05),transparent_70%)]" />
-              <div className="w-16 h-16 rounded-full border-2 border-brand-gold/30 flex items-center justify-center mb-4">
-                <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 text-brand-gold/50">
-                  <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                </svg>
+          <div className="grid grid-cols-2 gap-4">
+            {[{ value: "10+", label: tr.statYears }, { value: "A Coruña", label: tr.aboutStatZone }].map((stat) => (
+              <div key={stat.label} className="bg-white border border-gray-200 p-8 rounded-sm text-center">
+                <p className="text-3xl font-bold text-brand-gold">{stat.value}</p>
+                <p className="text-gray-500 text-sm mt-2 tracking-wide">{stat.label}</p>
               </div>
-              <p className="text-gray-500 text-base">{tr.aboutPhotoLabel}</p>
-              <p className="text-gray-400 text-sm mt-1">{tr.aboutPhotoSoon}</p>
-              <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                <div className="absolute -top-8 -right-8 w-16 h-16 bg-brand-gold/20 rotate-45" />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4 mt-4">
-              {[{ value: "10+", label: tr.statYears }, { value: "A Coruña", label: tr.aboutStatZone }].map((stat) => (
-                <div key={stat.label} className="bg-white border border-gray-200 p-5 rounded-sm text-center">
-                  <p className="text-2xl font-bold text-brand-gold">{stat.value}</p>
-                  <p className="text-gray-500 text-sm mt-1 tracking-wide">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>
